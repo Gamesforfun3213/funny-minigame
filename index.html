@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loading...</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #0f0;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .dots::after {
+      content: '';
+      animation: dots 1.5s steps(3, end) infinite;
+    }
+    @keyframes dots {
+      0% { content: ''; }
+      33% { content: '.'; }
+      66% { content: '..'; }
+      100% { content: '...'; }
+    }
+    .loading-bar {
+      width: 300px;
+      height: 20px;
+      border: 1px solid #0f0;
+      margin-top: 20px;
+      overflow: hidden;
+    }
+    .loading-fill {
+      height: 100%;
+      width: 0%;
+      background-color: #0f0;
+      animation: fill 2s linear infinite;
+    }
+    @keyframes fill {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Loading<span class="dots"></span></h1>
+  <div class="loading-bar">
+    <div class="loading-fill"></div>
+  </div>
+  <p>Please wait...</p>
+</body>
+</html>
